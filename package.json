@@ -1,0 +1,19 @@
+{
+  "name": "webcam-client",
+  "version": "0.0.1",
+  "description": "webcam client for video camera",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emuro2/webcam-client.git"
+  },
+  "author": "emuro2",
+  "homepage": "https://github.com/emuro2/webcam-client#readme",
+  "dependencies": {
+    "express": "4.14.0",
+    "socket.io": "1.7.1"
+  }
+}
