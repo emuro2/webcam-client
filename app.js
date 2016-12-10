@@ -9,7 +9,8 @@ if (cam.configGet().formatName !== "YUYV") {
 cam.configSet({width: 240, height: 297});
 cam.start();
 cam.capture(function loop() {
-    var frame = cam.frameRaw();
+    var frame = cam.toYUYV();
+    require("fs").createWriteStream("./result.jpg").end(imageBuffer);
     socket.emit('imageBuffer', Buffer(frame) );
     // cam.capture(loop);
 });
