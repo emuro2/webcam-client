@@ -55,3 +55,11 @@ $ sudo rm /usr/bin/node
 $ sudo rm /usr/bin/npm
 $ sudo ln -s /home/pi/.nvm/versions/node/vX.X.X/bin/node /usr/bin/node
 $ sudo ln -s /home/pi/.nvm/versions/node/vX.X.X/bin/npm /usr/bin/npm
+
+
+
+Load Camera Module to /dev/video0:
+`sudo modprobe bcm2835-v4l2`
+`ls /dev`
+
+If Camera Module format is not correct: run app.js without YUYV checks then stop and restart and it should be in YUYV mode. Or you can use the following command: v4l2-ctl --set-fmt-video=width=640,height=480,pixelformat=1

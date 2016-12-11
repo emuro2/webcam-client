@@ -1,20 +1,22 @@
 var socket = require('socket.io-client')('https://10.0.0.9');
 var v4l2camera = require("v4l2camera");
 var cam = new v4l2camera.Camera("/dev/video0");
-
+var frame = "";
 if (cam.configGet().formatName !== "YUYV") {
     console.log("YUYV camera required");
     process.exit(1);
 }
-cam.configSet({width: 240, height: 297});
+cam.configSet({width: 320, height: 240});
 cam.start();
 cam.capture(function loop() {
-    var frame = cam.toYUYV();
-    require("fs").createWriteStream("./result.jpg").end(imageBuffer);
-    socket.emit('imageBuffer', Buffer(frame) );
-    // cam.capture(loop);
+    cam.capture(loop);
 });
 socket.on('connect', function(){
     socket.emit('chat message', "Hello from camera");
+});
 
+socket.on('get image', function(){
+    console.log("get image request");
+    frame = cam.toYUYV();
+    socket.emit('imageBuffer', Buffer(frame) );
 });
