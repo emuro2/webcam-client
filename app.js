@@ -1,4 +1,4 @@
-var socket = require('socket.io-client')('https://10.0.0.9');
+var socket = require('socket.io-client')('https://ec2-52-23-254-22.compute-1.amazonaws.com');
 var v4l2camera = require("v4l2camera");
 var cam = new v4l2camera.Camera("/dev/video0");
 var frame = "";
