@@ -13,8 +13,7 @@
   "author": "emuro2",
   "homepage": "https://github.com/emuro2/webcam-client#readme",
   "dependencies": {
-    "socket.io-client": "1.7.1",
-    "socket.io-stream": "0.9.1",
+    "socket.io-client": "1.7.1", 
     "v4l2camera": "1.0.4"
   }
 }

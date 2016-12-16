@@ -62,4 +62,4 @@ Load Camera Module to /dev/video0:
 `sudo modprobe bcm2835-v4l2`
 `ls /dev`
 
-If Camera Module format is not correct: run app.js without YUYV checks then stop and restart and it should be in YUYV mode. Or you can use the following command: v4l2-ctl --set-fmt-video=width=640,height=480,pixelformat=1
+If Camera Module format is not correct: run app.js without YUYV checks then stop and restart and it should be in YUYV mode. Or you can use the following command: v4l2-ctl --set-fmt-video=width=320,height=240,pixelformat=1
