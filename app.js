@@ -16,7 +16,6 @@ socket.on('connect', function(){
 });
 
 socket.on('get image', function(){
-    console.log("get image request");
     frame = cam.toYUYV();
     socket.emit('imageBuffer', Buffer(frame) );
 });
